@@ -1,0 +1,35 @@
+{
+      "label": "排序",
+      "version": "1.0.0",
+      "description": "获取排序之后的数据",
+      "nodes": [
+            {
+                  "name": "hero",
+                  "process": "models.hero.get",
+                  "args": [
+                        {
+                              "select": [
+                                    "id",
+                                    "name",
+                                    "type",
+                                    "price"
+                              ],
+                              "orders": [
+                                    {
+                                          "column": "price",
+                                          "option": "desc"
+                                    }
+                              ]
+                        }
+                  ],
+                  "outs": [
+                        "{{$out}}"
+                  ]
+            }
+      ],
+      "output": {
+            "data": {
+                  "heros": "{{$res.hero.0}}"
+            }
+      }
+}

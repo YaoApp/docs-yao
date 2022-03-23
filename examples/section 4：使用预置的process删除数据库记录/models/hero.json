@@ -1,0 +1,79 @@
+{
+      "name": "英雄",
+      "table": {
+            "name": "hero",
+            "comment": "英雄信息表",
+            "engine": "InnoDB"
+      },
+      "columns": [
+            {
+                  "name": "id",
+                  "type": "ID"
+            },
+            {
+                  "label": "名称",
+                  "name": "name",
+                  "type": "string",
+                  "length": 200,
+                  "comment": "名称",
+                  "unique": true
+            },
+            {
+                  "label": "类型",
+                  "name": "type",
+                  "type": "enum",
+                  "option": [
+                        "AP",
+                        "AD",
+                        "Tank"
+                  ],
+                  "comment": "英雄类型：法师, 物理, 坦克",
+                  "default": "AP",
+                  "index": true
+            },
+            {
+                  "label": "价格",
+                  "name": "price",
+                  "type": "integer",
+                  "default": 1000,
+                  "comment": "英雄价格"
+            }
+      ],
+      "relations": {},
+      "option": {
+            "timestamps": true,
+            "soft_deletes": true
+      },
+      "values": [
+            {
+                  "name": "艾希",
+                  "type": "AD",
+                  "price":1350
+            },
+            {
+                  "name": "蛮王",
+                  "type": "AD",
+                  "price":3500
+            },
+            {
+                  "name": "赵信",
+                  "type": "AD",
+                  "price":1350
+            },
+            {
+                  "name": "杰斯",
+                  "type": "AD",
+                  "price":6300
+            },
+            {
+                  "name": "卡特",
+                  "type": "AP",
+                  "price":3750
+            },
+            {
+                  "name": "巨魔之王",
+                  "type": "Tank",
+                  "price":4800
+            }
+      ]
+}

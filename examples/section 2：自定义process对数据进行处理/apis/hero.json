@@ -1,0 +1,31 @@
+{
+      "name": "英雄-接口",
+      "version": "1.0.0",
+      "description": "英雄相关接口",
+      "group": "hero",
+      "guard": "-",
+      "paths": [
+            {
+                  "path": "/:id",
+                  "method": "GET",
+                  "process": "models.hero.Find",
+                  "in": [
+                        "$param.id",
+                        ":params"
+                  ],
+                  "out": {
+                        "status": 200,
+                        "type": "application/json"
+                  }
+            },
+            {
+                  "path": "/sort",
+                  "method": "GET",
+                  "process": "flows.sort",
+                  "out": {
+                        "status": 200,
+                        "type": "application/json"
+                  }
+            }
+      ]
+}
